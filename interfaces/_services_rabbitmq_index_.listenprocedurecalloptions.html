@@ -62,13 +62,24 @@
 					<a href="_services_rabbitmq_index_.listenprocedurecalloptions.html">listenProcedureCallOptions</a>
 				</li>
 			</ul>
-			<h1>Interface listenProcedureCallOptions</h1>
+			<h1>Interface listenProcedureCallOptions&lt;Request, Response&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>Request</h4>
+					</li>
+					<li>
+						<h4>Response</h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -96,10 +107,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="callback" class="tsd-anchor"></a>
 					<h3>callback</h3>
-					<div class="tsd-signature tsd-kind-icon">callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>payload<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="_services_rabbitmq_index_.listencallbackoptions.html" class="tsd-signature-type">listenCallbackOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Request</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/05ab9fa/src/services/rabbitmq/index.ts#L166">services/rabbitmq/index.ts:166</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/ddf6137/src/services/rabbitmq/index.ts#L179">services/rabbitmq/index.ts:179</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -112,17 +123,17 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-signature">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>payload<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="_services_rabbitmq_index_.listencallbackoptions.html" class="tsd-signature-type">listenCallbackOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Request</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&gt;</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
-												<h5>payload: <span class="tsd-signature-type">unknown</span></h5>
+												<h5>options: <a href="_services_rabbitmq_index_.listencallbackoptions.html" class="tsd-signature-type">listenCallbackOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Request</span><span class="tsd-signature-symbol">&gt;</span></h5>
 											</li>
 										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&gt;</span></h4>
 									</li>
 								</ul>
 							</li>
@@ -135,7 +146,7 @@
 					<div class="tsd-signature tsd-kind-icon">queue<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/05ab9fa/src/services/rabbitmq/index.ts#L164">services/rabbitmq/index.ts:164</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/ddf6137/src/services/rabbitmq/index.ts#L177">services/rabbitmq/index.ts:177</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -174,9 +185,12 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_services_rabbitmq_index_.assertqueueoptions.html" class="tsd-kind-icon">assert<wbr>Queue<wbr>Options</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_services_rabbitmq_index_.listencallbackoptions.html" class="tsd-kind-icon">listen<wbr>Callback<wbr>Options</a>
+					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="_services_rabbitmq_index_.listenprocedurecalloptions.html" class="tsd-kind-icon">listen<wbr>Procedure<wbr>Call<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
@@ -204,7 +218,7 @@
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="../modules/_services_rabbitmq_index_.html#getconnection" class="tsd-kind-icon">get<wbr>Connection</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="../modules/_services_rabbitmq_index_.html#listenprocedurecall" class="tsd-kind-icon">listen<wbr>Procedure<wbr>Call</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
@@ -233,6 +247,7 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 		</div>
