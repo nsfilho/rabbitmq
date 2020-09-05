@@ -151,26 +151,41 @@ export const remoteProcedureCall = async <T>(options: remoteProcedureCallOptions
         correlationId: uniqueId,
         replyTo: returnQueueName,
     });
-    const result = await channel.get(returnQueueName);
-    await channel.close();
-    if (result) {
-        return JSON.parse(result.content.toString('utf-8')) as T;
-    }
-    return null;
+    return new Promise((resolve) => {
+        channel.consume(returnQueueName, async (message) => {
+            if (message) {
+                const { correlationId, replyTo } = message.properties;
+                if (replyTo === returnQueueName && correlationId === uniqueId) {
+                    channel.ack(message);
+                    await channel.close();
+                    resolve(JSON.parse(message.content.toString('utf-8')) as T);
+                }
+            }
+        });
+    });
 };
 
-export interface listenProcedureCallOptions {
+export interface listenCallbackOptions<Request> {
+    /** content payload */
+    payload: Request;
+    /** stop to listening remote call */
+    stop: () => void;
+}
+
+export interface listenProcedureCallOptions<Request, Response> {
     /** Queue name to listen */
     queue: string;
     /** Function to callback, which receive a payload as parameter */
-    callback: (payload: unknown) => Promise<unknown>;
+    callback: (options: listenCallbackOptions<Request>) => Promise<Response>;
 }
 
 /**
  * Listen in a queue for a remote function call
  * @param options named parameters
  */
-export const listenProcedureCall = async (options: listenProcedureCallOptions): Promise<void> => {
+export const listenProcedureCall = async <Request = unknown, Response = unknown>(
+    options: listenProcedureCallOptions<Request, Response>,
+): Promise<void> => {
     const { callback, queue } = options;
     const connection = await getConnection();
     const channel = await connection.createChannel();
@@ -181,15 +196,27 @@ export const listenProcedureCall = async (options: listenProcedureCallOptions): 
             autoDelete: false,
         },
     });
+
+    /** Logic for stop listening */
+    let stopListening = false;
+    const stop = () => {
+        stopListening = true;
+    };
+
     channel.consume(queue, async (message) => {
         if (message) {
             const { replyTo, correlationId } = message.properties;
             const params = JSON.parse(message.content.toString('utf-8'));
-            const result = await callback(params);
+            const result = await callback({
+                payload: params,
+                stop,
+            });
             channel.sendToQueue(replyTo, Buffer.from(JSON.stringify(result)), {
                 correlationId,
                 replyTo,
             });
+            channel.ack(message);
+            if (stopListening) await channel.close();
         }
     });
 };

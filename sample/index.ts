@@ -1,21 +1,3 @@
-# RabbitMQ
-
-A very simple and small services to simplify process to connect and call remote procedures (async way).
-
-Project licensed under: GPLv3
-
-## Environment Variables
-
-This services use some environment variables to pre-adjust some things, like:
-
--   `RABBITMQ_URL`: url to connect to amqp server. Default: `amqp://admin:password@localhost:5672`;
--   `RABBITMQ_RETRIES_INTERVAL`: interval to retry connection in miliseconds. Default: `1000`;
--   `RABBITMQ_ROUTINGKEY_PREFIX`: prefix to routing key to identify this as a sender. Default: `api`;
--   `RABBITMQ_CONSOLE_STATUS`: show in console messages about rabbitmq status;
-
-## Example
-
-```ts
 /* eslint-disable no-console */
 import { listenProcedureCall, remoteProcedureCall, getConnection, assertExchange } from '../src';
 
@@ -110,4 +92,3 @@ const execute = async () => {
 };
 
 execute();
-```
