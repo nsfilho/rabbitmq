@@ -3,17 +3,47 @@
 A very simple and small services to simplify process to connect and call remote procedures (async way).
 
 Project licensed under: GPLv3
+Site Documentation: [Homepage](https://nsfilho.github.io/rabbitmq/index.html)
+Repository: [GitHub](https://github.com/nsfilho/rabbitmq.git)
 
 ## Environment Variables
 
 This services use some environment variables to pre-adjust some things, like:
 
 -   `RABBITMQ_URL`: url to connect to amqp server. Default: `amqp://admin:password@localhost:5672`;
--   `RABBITMQ_RETRIES_INTERVAL`: interval to retry connection in miliseconds. Default: `1000`;
+-   `RABBITMQ_RETRIES_INTERVAL`: interval to retry connection in milliseconds. Default: `1000`;
 -   `RABBITMQ_ROUTINGKEY_PREFIX`: prefix to routing key to identify this as a sender. Default: `api`;
 -   `RABBITMQ_CONSOLE_STATUS`: show in console messages about rabbitmq status;
+-   `RABBIT_ENCONDING_CHARSET`: permits you to change buffer charset to encoding your messages.
+
+## Running RabbitMQ
+
+For use this library you will need to run a RabbitMQ. A sample docker-compose:
+
+```yml
+version: '2.0'
+
+services:
+    queue:
+        image: rabbitmq:3-management
+        ports:
+            - 5672:5672
+            - 15672:15672
+        environment:
+            - RABBITMQ_DEFAULT_USER=admin
+            - RABBITMQ_DEFAULT_PASS=password
+        volumes:
+            - rabbitmq:/var/lib/rabbitmq
+
+volumes:
+    rabbitmq:
+```
+
+If you would like to use a docker swarm (stack) version, you can see in your sample folder.
 
 ## Example
+
+You will found other samples in: [Samples Folder](https://github.com/nsfilho/rabbitmq/tree/master/sample).
 
 ```ts
 /* eslint-disable no-console */
@@ -102,6 +132,9 @@ const execute = async () => {
             waitTimeToReturn: 3000,
         },
         routingKey: 'default',
+        assertReturnQueue: true,
+        exclusiveReturnChannel: false,
+        ignoreReturn: false,
     });
 
     // Log return for you see the fully process.

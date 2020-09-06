@@ -19,6 +19,19 @@
  * 
  */
 
+type Encoding =
+    | 'utf-8'
+    | 'ascii'
+    | 'utf8'
+    | 'utf16le'
+    | 'ucs2'
+    | 'ucs-2'
+    | 'base64'
+    | 'latin1'
+    | 'binary'
+    | 'hex'
+    | undefined;
+
 export const RABBITMQ_URL = process.env.RABBITMQ_URL || 'amqp://admin:password@localhost:5672';
 
 /** Interval to retry connection. Don't over abuse (< 1000), use at minimum 1000ms */
@@ -34,3 +47,6 @@ export const RABBITMQ_ROUTINGKEY_PREFIX = process.env.RABBITMQ_ROUTINGKEY_PREFIX
 export const RABBITMQ_CONSOLE_STATUS = process.env.RABBITMQ_CONSOLE_STATUS
     ? process.env.RABBITMQ_CONSOLE_STATUS === 'true'
     : true;
+
+/** default charset enconding for buffer */
+export const RABBIT_ENCONDING_CHARSET: Encoding = (process.env.RABBIT_ENCONDING_CHARSET as Encoding) || 'utf-8';
