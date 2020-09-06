@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>publishOptions | rabbitmq</title>
+	<title>assertExchangeOptions | rabbitmq</title>
 	<meta name="description" content="Documentation for rabbitmq">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_services_rabbitmq_index_.html">&quot;services/rabbitmq/index&quot;</a>
+					<a href="../modules/_services_rabbitmq_asserts_.html">&quot;services/rabbitmq/asserts&quot;</a>
 				</li>
 				<li>
-					<a href="_services_rabbitmq_index_.publishoptions.html">publishOptions</a>
+					<a href="_services_rabbitmq_asserts_.assertexchangeoptions.html">assertExchangeOptions</a>
 				</li>
 			</ul>
-			<h1>Interface publishOptions</h1>
+			<h1>Interface assertExchangeOptions</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">publishOptions</span>
+						<span class="target">assertExchangeOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -84,9 +84,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_index_.publishoptions.html#exchange" class="tsd-kind-icon">exchange</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_index_.publishoptions.html#payload" class="tsd-kind-icon">payload</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_index_.publishoptions.html#routingkey" class="tsd-kind-icon">routing<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_asserts_.assertexchangeoptions.html#advanced" class="tsd-kind-icon">advanced</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_asserts_.assertexchangeoptions.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_asserts_.assertexchangeoptions.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,49 +95,34 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="exchange" class="tsd-anchor"></a>
-					<h3>exchange</h3>
-					<div class="tsd-signature tsd-kind-icon">exchange<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="advanced" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> advanced</h3>
+					<div class="tsd-signature tsd-kind-icon">advanced<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">amqp.Options.AssertExchange</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/ddf6137/src/services/rabbitmq/index.ts#L106">services/rabbitmq/index.ts:106</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/92b093c/src/services/rabbitmq/asserts.ts#L32">services/rabbitmq/asserts.ts:32</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Exchange name</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="payload" class="tsd-anchor"></a>
-					<h3>payload</h3>
-					<div class="tsd-signature tsd-kind-icon">payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unknown</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/ddf6137/src/services/rabbitmq/index.ts#L110">services/rabbitmq/index.ts:110</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/92b093c/src/services/rabbitmq/asserts.ts#L30">services/rabbitmq/asserts.ts:30</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Payload content (recommended to pass a object)</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="routingkey" class="tsd-anchor"></a>
-					<h3>routing<wbr>Key</h3>
-					<div class="tsd-signature tsd-kind-icon">routing<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"fanout"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"direct"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"headers"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/ddf6137/src/services/rabbitmq/index.ts#L108">services/rabbitmq/index.ts:108</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/92b093c/src/services/rabbitmq/asserts.ts#L31">services/rabbitmq/asserts.ts:31</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Routing key complement (use prefix before this name)</p>
-						</div>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -157,65 +142,50 @@
 						<a href="../modules/_index_.html">&quot;index&quot;</a>
 					</li>
 					<li class="current tsd-kind-module">
+						<a href="../modules/_services_rabbitmq_asserts_.html">&quot;services/rabbitmq/asserts&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_services_rabbitmq_connection_.html">&quot;services/rabbitmq/connection&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_services_rabbitmq_events_.html">&quot;services/rabbitmq/events&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/_services_rabbitmq_index_.html">&quot;services/rabbitmq/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_services_rabbitmq_rpc_.html">&quot;services/rabbitmq/rpc&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_services_rabbitmq_index_.assertexchangeoptions.html" class="tsd-kind-icon">assert<wbr>Exchange<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_services_rabbitmq_index_.assertqueueoptions.html" class="tsd-kind-icon">assert<wbr>Queue<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_services_rabbitmq_index_.listencallbackoptions.html" class="tsd-kind-icon">listen<wbr>Callback<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_services_rabbitmq_index_.listenprocedurecalloptions.html" class="tsd-kind-icon">listen<wbr>Procedure<wbr>Call<wbr>Options</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_services_rabbitmq_index_.publishoptions.html" class="tsd-kind-icon">publish<wbr>Options</a>
+						<a href="_services_rabbitmq_asserts_.assertexchangeoptions.html" class="tsd-kind-icon">assert<wbr>Exchange<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_services_rabbitmq_index_.publishoptions.html#exchange" class="tsd-kind-icon">exchange</a>
+								<a href="_services_rabbitmq_asserts_.assertexchangeoptions.html#advanced" class="tsd-kind-icon">advanced</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_services_rabbitmq_index_.publishoptions.html#payload" class="tsd-kind-icon">payload</a>
+								<a href="_services_rabbitmq_asserts_.assertexchangeoptions.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_services_rabbitmq_index_.publishoptions.html#routingkey" class="tsd-kind-icon">routing<wbr>Key</a>
+								<a href="_services_rabbitmq_asserts_.assertexchangeoptions.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_services_rabbitmq_index_.remoteprocedurecalloptions.html" class="tsd-kind-icon">remote<wbr>Procedure<wbr>Call<wbr>Options</a>
+						<a href="_services_rabbitmq_asserts_.assertqueueoptions.html" class="tsd-kind-icon">assert<wbr>Queue<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_services_rabbitmq_index_.html#assertexchange" class="tsd-kind-icon">assert<wbr>Exchange</a>
+						<a href="../modules/_services_rabbitmq_asserts_.html#assertexchange" class="tsd-kind-icon">assert<wbr>Exchange</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_services_rabbitmq_index_.html#assertqueue" class="tsd-kind-icon">assert<wbr>Queue</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_services_rabbitmq_index_.html#getconnection" class="tsd-kind-icon">get<wbr>Connection</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../modules/_services_rabbitmq_index_.html#listenprocedurecall" class="tsd-kind-icon">listen<wbr>Procedure<wbr>Call</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_services_rabbitmq_index_.html#publish" class="tsd-kind-icon">publish</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../modules/_services_rabbitmq_index_.html#remoteprocedurecall" class="tsd-kind-icon">remote<wbr>Procedure<wbr>Call</a>
-					</li>
-					<li class=" tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/_services_rabbitmq_index_.html#internalstate" class="tsd-kind-icon">internal<wbr>State</a>
+						<a href="../modules/_services_rabbitmq_asserts_.html#assertqueue" class="tsd-kind-icon">assert<wbr>Queue</a>
 					</li>
 				</ul>
 			</nav>
@@ -231,6 +201,7 @@
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>

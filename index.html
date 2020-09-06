@@ -68,20 +68,45 @@
 					<h1>RabbitMQ</h1>
 				</a>
 				<p>A very simple and small services to simplify process to connect and call remote procedures (async way).</p>
-				<p>Project licensed under: GPLv3</p>
+				<p>Project licensed under: GPLv3
+					Site Documentation: <a href="https://nsfilho.github.io/rabbitmq/index.html">Homepage</a>
+				Repository: <a href="https://github.com/nsfilho/rabbitmq.git">GitHub</a></p>
 				<a href="#environment-variables" id="environment-variables" style="color: inherit; text-decoration: none;">
 					<h2>Environment Variables</h2>
 				</a>
 				<p>This services use some environment variables to pre-adjust some things, like:</p>
 				<ul>
 					<li><code>RABBITMQ_URL</code>: url to connect to amqp server. Default: <code>amqp://admin:password@localhost:5672</code>;</li>
-					<li><code>RABBITMQ_RETRIES_INTERVAL</code>: interval to retry connection in miliseconds. Default: <code>1000</code>;</li>
+					<li><code>RABBITMQ_RETRIES_INTERVAL</code>: interval to retry connection in milliseconds. Default: <code>1000</code>;</li>
 					<li><code>RABBITMQ_ROUTINGKEY_PREFIX</code>: prefix to routing key to identify this as a sender. Default: <code>api</code>;</li>
 					<li><code>RABBITMQ_CONSOLE_STATUS</code>: show in console messages about rabbitmq status;</li>
+					<li><code>RABBIT_ENCONDING_CHARSET</code>: permits you to change buffer charset to encoding your messages.</li>
 				</ul>
+				<a href="#running-rabbitmq" id="running-rabbitmq" style="color: inherit; text-decoration: none;">
+					<h2>Running RabbitMQ</h2>
+				</a>
+				<p>For use this library you will need to run a RabbitMQ. A sample docker-compose:</p>
+				<pre><code class="language-yml"><span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;2.0&#x27;</span>
+
+<span class="hljs-attr">services:</span>
+    <span class="hljs-attr">queue:</span>
+        <span class="hljs-attr">image:</span> <span class="hljs-string">rabbitmq:3-management</span>
+        <span class="hljs-attr">ports:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-number">5672</span><span class="hljs-string">:5672</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-number">15672</span><span class="hljs-string">:15672</span>
+        <span class="hljs-attr">environment:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">RABBITMQ_DEFAULT_USER=admin</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">RABBITMQ_DEFAULT_PASS=password</span>
+        <span class="hljs-attr">volumes:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">rabbitmq:/var/lib/rabbitmq</span>
+
+<span class="hljs-attr">volumes:</span>
+    <span class="hljs-attr">rabbitmq:</span></code></pre>
+				<p>If you would like to use a docker swarm (stack) version, you can see in your sample folder.</p>
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h2>Example</h2>
 				</a>
+				<p>You will found other samples in: <a href="https://github.com/nsfilho/rabbitmq/tree/master/sample">Samples Folder</a>.</p>
 				<pre><code class="language-ts"><span class="hljs-comment">/* eslint-disable no-console */</span>
 <span class="hljs-keyword">import</span> { listenProcedureCall, remoteProcedureCall, getConnection, assertExchange } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../src&#x27;</span>;
 
@@ -168,6 +193,9 @@ listenProcedureCall&lt;ExamplePayloadRequest, ExamplePayloadReturn&gt;({
             waitTimeToReturn: <span class="hljs-number">3000</span>,
         },
         routingKey: <span class="hljs-string">&#x27;default&#x27;</span>,
+        assertReturnQueue: <span class="hljs-literal">true</span>,
+        exclusiveReturnChannel: <span class="hljs-literal">false</span>,
+        ignoreReturn: <span class="hljs-literal">false</span>,
     });
 
     <span class="hljs-comment">// Log return for you see the fully process.</span>
@@ -194,7 +222,19 @@ execute();</code></pre>
 						<a href="modules/_index_.html">&quot;index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_services_rabbitmq_asserts_.html">&quot;services/rabbitmq/asserts&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_services_rabbitmq_connection_.html">&quot;services/rabbitmq/connection&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_services_rabbitmq_events_.html">&quot;services/rabbitmq/events&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_services_rabbitmq_index_.html">&quot;services/rabbitmq/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_services_rabbitmq_rpc_.html">&quot;services/rabbitmq/rpc&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -214,6 +254,7 @@ execute();</code></pre>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
