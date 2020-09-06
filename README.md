@@ -2,9 +2,9 @@
 
 A very simple and small services to simplify process to connect and call remote procedures (async way).
 
-Project licensed under: GPLv3
-Site Documentation: [Homepage](https://nsfilho.github.io/rabbitmq/index.html)
-Repository: [GitHub](https://github.com/nsfilho/rabbitmq.git)
+-   Project licensed under: GPLv3
+-   Site Documentation: [Homepage](https://nsfilho.github.io/rabbitmq/index.html)
+-   Repository: [GitHub](https://github.com/nsfilho/rabbitmq.git)
 
 ## Environment Variables
 
