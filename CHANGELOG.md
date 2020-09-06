@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/nsfilho/rabbitmq/compare/v0.1.3...v0.1.4) (2020-09-06)
+
+
+### Bug Fixes
+
+* **docs:** fixing documentation site and urls ([79550a0](https://github.com/nsfilho/rabbitmq/commit/79550a0d08df903e985da249feff0c15a8646a8a))
+* **docs:** reducing files to package ([9482096](https://github.com/nsfilho/rabbitmq/commit/948209620bb309a205da64482d60fe247693457e))
+
 ### [0.1.3](https://github.com/nsfilho/rabbitmq/compare/v0.1.2...v0.1.3) (2020-09-06)
 
 
