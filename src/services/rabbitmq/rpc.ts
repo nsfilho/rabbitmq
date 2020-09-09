@@ -57,7 +57,7 @@ export interface remoteProcedureCallOptions {
 export const remoteProcedureCall = async <T>(options: remoteProcedureCallOptions): Promise<T | null> => {
     const { exchange, routingKey, payload, ignoreReturn, exclusiveReturnChannel, assertReturnQueue } = options;
     const uniqueId = nanoid();
-    const returnQueueName = exclusiveReturnChannel ? `${exchange}.return` : `${exchange}.return.${uniqueId}`;
+    const returnQueueName = exclusiveReturnChannel ? `${exchange}.return.${uniqueId}` : `${exchange}.return`;
     if (assertReturnQueue || exclusiveReturnChannel)
         await assertQueue({
             name: returnQueueName,
