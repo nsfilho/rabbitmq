@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/nsfilho/rabbitmq/compare/v0.1.5...v0.1.6) (2020-09-09)
+
+
+### Bug Fixes
+
+* changing RABBITMQ_DEBUG_CONSOLE ([9b0067b](https://github.com/nsfilho/rabbitmq/commit/9b0067bd4ea96b348c6699e436f5243638cb97ee))
+
 ### [0.1.5](https://github.com/nsfilho/rabbitmq/compare/v0.1.4...v0.1.5) (2020-09-09)
 
 
