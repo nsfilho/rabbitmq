@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/nsfilho/rabbitmq/compare/v0.1.4...v0.1.5) (2020-09-09)
+
+
+### Bug Fixes
+
+* **rpc:** fixing return with exclusive id ([5ba90c1](https://github.com/nsfilho/rabbitmq/commit/5ba90c13546c1d1d4e75a984f9178dd9b3cdffc7))
+
 ### [0.1.4](https://github.com/nsfilho/rabbitmq/compare/v0.1.3...v0.1.4) (2020-09-06)
 
 
