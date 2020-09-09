@@ -24,7 +24,7 @@
  * VERY IMPORTANT: don't try to import logger here (egg-or-chicken paradox)
  */
 import amqp from 'amqplib';
-import { RABBITMQ_URL, RABBITMQ_RETRIES_INTERVAL, RABBITMQ_CONSOLE_STATUS } from '../../constants';
+import { RABBITMQ_URL, RABBITMQ_RETRIES_INTERVAL, RABBITMQ_DEBUG_CONSOLE } from '../../constants';
 
 /**
  * Internal control
@@ -46,10 +46,11 @@ export const getConnection = async (): Promise<amqp.Connection> => {
             try {
                 internalState.connection = await amqp.connect(RABBITMQ_URL);
                 clearInterval(retriesInterval);
+                if (RABBITMQ_DEBUG_CONSOLE) console.log(`RABBITMQ(${retriesCount}): connected!`);
                 resolve(internalState.connection);
             } catch (err) {
                 retriesCount += 1;
-                if (RABBITMQ_CONSOLE_STATUS)
+                if (RABBITMQ_DEBUG_CONSOLE)
                     console.error(
                         `RABBITMQ(${retriesCount}): Failed to connect, retry in: ${RABBITMQ_RETRIES_INTERVAL}s`,
                     );

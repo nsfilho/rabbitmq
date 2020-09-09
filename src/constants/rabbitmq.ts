@@ -44,9 +44,7 @@ export const RABBITMQ_ROUTINGKEY_PREFIX = process.env.RABBITMQ_ROUTINGKEY_PREFIX
 /**
  * Show in console messages about rabbitmq progress
  */
-export const RABBITMQ_CONSOLE_STATUS = process.env.RABBITMQ_CONSOLE_STATUS
-    ? process.env.RABBITMQ_CONSOLE_STATUS === 'true'
-    : true;
+export const RABBITMQ_DEBUG_CONSOLE = process.env.RABBITMQ_DEBUG_CONSOLE === 'true';
 
 /** default charset enconding for buffer */
 export const RABBIT_ENCONDING_CHARSET: Encoding = (process.env.RABBIT_ENCONDING_CHARSET as Encoding) || 'utf-8';
