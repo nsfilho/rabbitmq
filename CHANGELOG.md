@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/nsfilho/rabbitmq/compare/v0.1.6...v0.1.7) (2020-09-10)
+
+
+### Features
+
+* **connection:** guarantee only one connection ([8f1f73c](https://github.com/nsfilho/rabbitmq/commit/8f1f73c33255383f59225d2f2553d1d84e113ebd))
+
 ### [0.1.6](https://github.com/nsfilho/rabbitmq/compare/v0.1.5...v0.1.6) (2020-09-09)
 
 
