@@ -24,22 +24,42 @@
  * VERY IMPORTANT: don't try to import logger here (egg-or-chicken paradox)
  */
 import amqp from 'amqplib';
-import { RABBITMQ_URL, RABBITMQ_RETRIES_INTERVAL, RABBITMQ_DEBUG_CONSOLE } from '../../constants';
+import { nanoid } from 'nanoid';
+import {
+    RABBITMQ_URL,
+    RABBITMQ_RETRIES_INTERVAL,
+    RABBITMQ_DEBUG_CONSOLE,
+    RABBITMQ_INTERVAL_CONNECTION_CHECK,
+} from '../../constants';
 
 /**
  * Internal control
  */
 const internalState: {
     connection: amqp.Connection | null;
+    started: boolean;
 } = {
+    started: false,
     connection: null,
 };
+
+const waitOtherInstanceConnect = (): Promise<amqp.Connection> =>
+    new Promise((resolve) => {
+        const myId = nanoid();
+        setInterval(() => {
+            if (internalState.connection !== null) resolve(internalState.connection);
+            else if (RABBITMQ_DEBUG_CONSOLE)
+                console.log(`RABBITMQ(${myId}): waiting other parallel call to connected...`);
+        }, RABBITMQ_INTERVAL_CONNECTION_CHECK);
+    });
 
 /**
  * A infinite looping to get you a reliable and stable connection to RabbitMQ
  */
 export const getConnection = async (): Promise<amqp.Connection> => {
     if (internalState.connection !== null) return internalState.connection;
+    if (internalState.started) return waitOtherInstanceConnect();
+    internalState.started = true;
     return new Promise((resolve) => {
         let retriesCount = 0;
         const retriesInterval = setInterval(async () => {

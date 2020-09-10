@@ -47,4 +47,9 @@ export const RABBITMQ_ROUTINGKEY_PREFIX = process.env.RABBITMQ_ROUTINGKEY_PREFIX
 export const RABBITMQ_DEBUG_CONSOLE = process.env.RABBITMQ_DEBUG_CONSOLE === 'true';
 
 /** default charset enconding for buffer */
-export const RABBIT_ENCONDING_CHARSET: Encoding = (process.env.RABBIT_ENCONDING_CHARSET as Encoding) || 'utf-8';
+export const RABBITMQ_ENCONDING_CHARSET: Encoding = (process.env.RABBITMQ_ENCONDING_CHARSET as Encoding) || 'utf-8';
+
+/** internal to check if it is connected or not */
+export const RABBITMQ_INTERVAL_CONNECTION_CHECK = process.env.RABBITMQ_INTERVAL_CONNECTION_CHECK
+    ? parseInt(process.env.RABBITMQ_INTERVAL_CONNECTION_CHECK, 10)
+    : 100;

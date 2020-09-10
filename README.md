@@ -13,8 +13,9 @@ This services use some environment variables to pre-adjust some things, like:
 -   `RABBITMQ_URL`: url to connect to amqp server. Default: `amqp://admin:password@localhost:5672`;
 -   `RABBITMQ_RETRIES_INTERVAL`: interval to retry connection in milliseconds. Default: `1000`;
 -   `RABBITMQ_ROUTINGKEY_PREFIX`: prefix to routing key to identify this as a sender. Default: `api`;
--   `RABBITMQ_DEBUG_CONSOLE`: show in console messages about rabbitmq status;
--   `RABBIT_ENCONDING_CHARSET`: permits you to change buffer charset to encoding your messages.
+-   `RABBITMQ_DEBUG_CONSOLE`: show in console messages about rabbitmq status. Default: `false`;
+-   `RABBITMQ_ENCONDING_CHARSET`: permits you to change buffer charset to encoding your messages. Default: `utf-8`
+-   `RABBITMQ_INTERVAL_CONNECTION_CHECK`: interval to check (if multiples getConnections are called simultaneously) if it is connected. Default: `100`
 
 ## Running RabbitMQ
 

@@ -20,7 +20,7 @@
  */
 import { nanoid } from 'nanoid';
 import { getConnection, assertQueue } from '.';
-import { RABBIT_ENCONDING_CHARSET } from '../../constants';
+import { RABBITMQ_ENCONDING_CHARSET } from '../../constants';
 import { disconnect } from './connection';
 
 export interface remoteProcedureCallOptions {
@@ -81,7 +81,7 @@ export const remoteProcedureCall = async <T>(options: remoteProcedureCallOptions
                     const { correlationId, replyTo } = message.properties;
                     if (replyTo === returnQueueName && correlationId === uniqueId) {
                         channel.ack(message);
-                        resolve(JSON.parse(message.content.toString(RABBIT_ENCONDING_CHARSET)) as T);
+                        resolve(JSON.parse(message.content.toString(RABBITMQ_ENCONDING_CHARSET)) as T);
                         await channel.close();
                     } else {
                         channel.nack(message);
@@ -151,7 +151,7 @@ export const listenProcedureCall = async <Request = unknown, Response = unknown>
         async (message) => {
             if (message) {
                 const { replyTo, correlationId } = message.properties;
-                const params = JSON.parse(message.content.toString(RABBIT_ENCONDING_CHARSET));
+                const params = JSON.parse(message.content.toString(RABBITMQ_ENCONDING_CHARSET));
                 const result = await callback({
                     payload: params,
                     stop,
