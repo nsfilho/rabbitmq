@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/nsfilho/rabbitmq/compare/v0.1.7...v0.1.8) (2020-10-02)
+
+
+### Features
+
+* **channels:** improving channels systems ([211febd](https://github.com/nsfilho/rabbitmq/commit/211febd9ef2837885054a763c9b4d545f1aada62))
+
 ### [0.1.7](https://github.com/nsfilho/rabbitmq/compare/v0.1.6...v0.1.7) (2020-09-10)
 
 
