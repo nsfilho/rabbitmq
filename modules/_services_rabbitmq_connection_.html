@@ -82,17 +82,34 @@
 					GNU General Public License for more details.</p>
 					<p>You should have received a copy of the GNU General Public License
 					along with this program.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
-					<p>Author: Nelio Santos <a href="mailto:&#110;&#x73;&#x66;&#x69;&#x6c;&#x68;&#x6f;&#x40;&#105;&#99;&#108;&#111;&#117;&#x64;&#46;&#x63;&#x6f;&#x6d;">&#110;&#x73;&#x66;&#x69;&#x6c;&#x68;&#x6f;&#x40;&#105;&#99;&#108;&#111;&#117;&#x64;&#46;&#x63;&#x6f;&#x6d;</a></p>
+					<p>Author: Nelio Santos <a href="mailto:&#x6e;&#115;&#x66;&#105;&#x6c;&#104;&#111;&#64;&#105;&#99;&#108;&#x6f;&#117;&#x64;&#x2e;&#99;&#111;&#x6d;">&#x6e;&#115;&#x66;&#105;&#x6c;&#104;&#111;&#64;&#105;&#99;&#108;&#x6f;&#117;&#x64;&#x2e;&#99;&#111;&#x6d;</a></p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_services_rabbitmq_connection_.channelvault.html" class="tsd-kind-icon">Channel<wbr>Vault</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_services_rabbitmq_connection_.channelconsumeoptions.html" class="tsd-kind-icon">channel<wbr>Consume<wbr>Options</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_services_rabbitmq_connection_.getchanneloptions.html" class="tsd-kind-icon">get<wbr>Channel<wbr>Options</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_services_rabbitmq_connection_.html#channelvault-1" class="tsd-kind-icon">channel<wbr>Vault</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_services_rabbitmq_connection_.html#channelconsume" class="tsd-kind-icon">channel<wbr>Consume</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_services_rabbitmq_connection_.html#disconnect" class="tsd-kind-icon">disconnect</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_services_rabbitmq_connection_.html#getchannel" class="tsd-kind-icon">get<wbr>Channel</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_services_rabbitmq_connection_.html#getchannelvault" class="tsd-kind-icon">get<wbr>Channel<wbr>Vault</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_services_rabbitmq_connection_.html#getconnection" class="tsd-kind-icon">get<wbr>Connection</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_services_rabbitmq_connection_.html#waitotherinstanceconnect" class="tsd-kind-icon">wait<wbr>Other<wbr>Instance<wbr>Connect</a></li>
 							</ul>
@@ -106,8 +123,73 @@
 					</div>
 				</section>
 			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="channelvault-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> channel<wbr>Vault</h3>
+					<div class="tsd-signature tsd-kind-icon">channel<wbr>Vault<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_services_rabbitmq_connection_.channelvault.html" class="tsd-signature-type">ChannelVault</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/connection.ts#L103">services/rabbitmq/connection.ts:103</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="channelconsume" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> channel<wbr>Consume</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">channel<wbr>Consume<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConsumeMessage</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">; </span>correlationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/connection.ts#L154">services/rabbitmq/connection.ts:154</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConsumeMessage</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">; </span>correlationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConsumeMessage</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter-signature">
+													<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable">
+														<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConsumeMessage</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+													</ul>
+													<ul class="tsd-descriptions">
+														<li class="tsd-description">
+															<h4 class="tsd-parameters-title">Parameters</h4>
+															<ul class="tsd-parameters">
+																<li>
+																	<h5>message: <span class="tsd-signature-type">ConsumeMessage</span></h5>
+																</li>
+															</ul>
+															<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>correlation<wbr>Id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="disconnect" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> disconnect</h3>
@@ -118,7 +200,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/connection.ts#L85">services/rabbitmq/connection.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/connection.ts#L85">services/rabbitmq/connection.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -127,6 +209,62 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getchannel" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Channel</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Channel<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Channel</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/connection.ts#L141">services/rabbitmq/connection.ts:141</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Channel</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getchannelvault" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Channel<wbr>Vault</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Channel<wbr>Vault<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_services_rabbitmq_connection_.channelvault.html" class="tsd-signature-type">ChannelVault</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/connection.ts#L109">services/rabbitmq/connection.ts:109</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_services_rabbitmq_connection_.channelvault.html" class="tsd-signature-type">ChannelVault</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -140,7 +278,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/connection.ts#L59">services/rabbitmq/connection.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/connection.ts#L59">services/rabbitmq/connection.ts:59</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -162,7 +300,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/connection.ts#L46">services/rabbitmq/connection.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/connection.ts#L46">services/rabbitmq/connection.ts:46</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Connection</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -178,7 +316,7 @@
 					<div class="tsd-signature tsd-kind-icon">internal<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/connection.ts#L38">services/rabbitmq/connection.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/connection.ts#L38">services/rabbitmq/connection.ts:38</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -192,7 +330,7 @@
 						<div class="tsd-signature tsd-kind-icon">connection<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/connection.ts#L43">services/rabbitmq/connection.ts:43</a></li>
+								<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/connection.ts#L43">services/rabbitmq/connection.ts:43</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -202,7 +340,7 @@
 						<div class="tsd-signature tsd-kind-icon">started<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> = false</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/connection.ts#L42">services/rabbitmq/connection.ts:42</a></li>
+								<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/connection.ts#L42">services/rabbitmq/connection.ts:42</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -243,8 +381,29 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_services_rabbitmq_connection_.channelvault.html" class="tsd-kind-icon">Channel<wbr>Vault</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_services_rabbitmq_connection_.channelconsumeoptions.html" class="tsd-kind-icon">channel<wbr>Consume<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_services_rabbitmq_connection_.getchanneloptions.html" class="tsd-kind-icon">get<wbr>Channel<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_services_rabbitmq_connection_.html#channelvault-1" class="tsd-kind-icon">channel<wbr>Vault</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_services_rabbitmq_connection_.html#channelconsume" class="tsd-kind-icon">channel<wbr>Consume</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_services_rabbitmq_connection_.html#disconnect" class="tsd-kind-icon">disconnect</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_services_rabbitmq_connection_.html#getchannel" class="tsd-kind-icon">get<wbr>Channel</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_services_rabbitmq_connection_.html#getchannelvault" class="tsd-kind-icon">get<wbr>Channel<wbr>Vault</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_services_rabbitmq_connection_.html#getconnection" class="tsd-kind-icon">get<wbr>Connection</a>

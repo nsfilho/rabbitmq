@@ -95,6 +95,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_rpc_.listenprocedurecalloptions.html#autoexchange" class="tsd-kind-icon">auto<wbr>Exchange</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_rpc_.listenprocedurecalloptions.html#callback" class="tsd-kind-icon">callback</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_rpc_.listenprocedurecalloptions.html#queue" class="tsd-kind-icon">queue</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_rpc_.listenprocedurecalloptions.html#returnvalue" class="tsd-kind-icon">return<wbr>Value</a></li>
@@ -106,12 +107,27 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="autoexchange" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> auto<wbr>Exchange</h3>
+					<div class="tsd-signature tsd-kind-icon">auto<wbr>Exchange<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/rpc.ts#L89">services/rabbitmq/rpc.ts:89</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Assert Exchange for receive procedures calls. Default: true</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="callback" class="tsd-anchor"></a>
 					<h3>callback</h3>
 					<div class="tsd-signature tsd-kind-icon">callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="_services_rabbitmq_rpc_.listencallbackoptions.html" class="tsd-signature-type">listenCallbackOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Request</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/rpc.ts#L115">services/rabbitmq/rpc.ts:115</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/rpc.ts#L85">services/rabbitmq/rpc.ts:85</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -147,7 +163,7 @@
 					<div class="tsd-signature tsd-kind-icon">queue<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/rpc.ts#L113">services/rabbitmq/rpc.ts:113</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/rpc.ts#L83">services/rabbitmq/rpc.ts:83</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -162,7 +178,7 @@
 					<div class="tsd-signature tsd-kind-icon">return<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/rpc.ts#L117">services/rabbitmq/rpc.ts:117</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/rpc.ts#L87">services/rabbitmq/rpc.ts:87</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -215,6 +231,9 @@
 					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="_services_rabbitmq_rpc_.listenprocedurecalloptions.html" class="tsd-kind-icon">listen<wbr>Procedure<wbr>Call<wbr>Options</a>
 						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_services_rabbitmq_rpc_.listenprocedurecalloptions.html#autoexchange" class="tsd-kind-icon">auto<wbr>Exchange</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_services_rabbitmq_rpc_.listenprocedurecalloptions.html#callback" class="tsd-kind-icon">callback</a>
 							</li>

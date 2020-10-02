@@ -84,9 +84,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_rpc_.remoteprocedurecalloptions.html#assertreturnqueue" class="tsd-kind-icon">assert<wbr>Return<wbr>Queue</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_rpc_.remoteprocedurecalloptions.html#exchange" class="tsd-kind-icon">exchange</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_rpc_.remoteprocedurecalloptions.html#exclusivereturnchannel" class="tsd-kind-icon">exclusive<wbr>Return<wbr>Channel</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_rpc_.remoteprocedurecalloptions.html#ignorereturn" class="tsd-kind-icon">ignore<wbr>Return</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_rpc_.remoteprocedurecalloptions.html#payload" class="tsd-kind-icon">payload</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_rpc_.remoteprocedurecalloptions.html#routingkey" class="tsd-kind-icon">routing<wbr>Key</a></li>
@@ -98,29 +96,12 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="assertreturnqueue" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> assert<wbr>Return<wbr>Queue</h3>
-					<div class="tsd-signature tsd-kind-icon">assert<wbr>Return<wbr>Queue<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/rpc.ts#L50">services/rabbitmq/rpc.ts:50</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Assert return queue exists. Don&#39;t use true except in rarely cases, because this cause a large
-							performance degradation.</p>
-						</div>
-						<p>Default: false</p>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="exchange" class="tsd-anchor"></a>
 					<h3>exchange</h3>
 					<div class="tsd-signature tsd-kind-icon">exchange<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/rpc.ts#L28">services/rabbitmq/rpc.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/rpc.ts#L29">services/rabbitmq/rpc.ts:29</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -130,29 +111,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="exclusivereturnchannel" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> exclusive<wbr>Return<wbr>Channel</h3>
-					<div class="tsd-signature tsd-kind-icon">exclusive<wbr>Return<wbr>Channel<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/rpc.ts#L38">services/rabbitmq/rpc.ts:38</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Exclusive return channel, creates a new queue, with unique ID, to receive the procedure return.
-								When you a exclusive channel, have a performance impact because a new queue will be created.
-							Default: false</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="ignorereturn" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> ignore<wbr>Return</h3>
 					<div class="tsd-signature tsd-kind-icon">ignore<wbr>Return<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/rpc.ts#L43">services/rabbitmq/rpc.ts:43</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/rpc.ts#L38">services/rabbitmq/rpc.ts:38</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -168,7 +132,7 @@
 					<div class="tsd-signature tsd-kind-icon">payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unknown</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/rpc.ts#L32">services/rabbitmq/rpc.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/rpc.ts#L33">services/rabbitmq/rpc.ts:33</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -183,7 +147,7 @@
 					<div class="tsd-signature tsd-kind-icon">routing<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/35a486c/src/services/rabbitmq/rpc.ts#L30">services/rabbitmq/rpc.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/rpc.ts#L31">services/rabbitmq/rpc.ts:31</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -240,13 +204,7 @@
 						<a href="_services_rabbitmq_rpc_.remoteprocedurecalloptions.html" class="tsd-kind-icon">remote<wbr>Procedure<wbr>Call<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_services_rabbitmq_rpc_.remoteprocedurecalloptions.html#assertreturnqueue" class="tsd-kind-icon">assert<wbr>Return<wbr>Queue</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_services_rabbitmq_rpc_.remoteprocedurecalloptions.html#exchange" class="tsd-kind-icon">exchange</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_services_rabbitmq_rpc_.remoteprocedurecalloptions.html#exclusivereturnchannel" class="tsd-kind-icon">exclusive<wbr>Return<wbr>Channel</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_services_rabbitmq_rpc_.remoteprocedurecalloptions.html#ignorereturn" class="tsd-kind-icon">ignore<wbr>Return</a>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>publishOptions | rabbitmq</title>
+	<title>getChannelOptions | rabbitmq</title>
 	<meta name="description" content="Documentation for rabbitmq">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_services_rabbitmq_events_.html">&quot;services/rabbitmq/events&quot;</a>
+					<a href="../modules/_services_rabbitmq_connection_.html">&quot;services/rabbitmq/connection&quot;</a>
 				</li>
 				<li>
-					<a href="_services_rabbitmq_events_.publishoptions.html">publishOptions</a>
+					<a href="_services_rabbitmq_connection_.getchanneloptions.html">getChannelOptions</a>
 				</li>
 			</ul>
-			<h1>Interface publishOptions</h1>
+			<h1>Interface getChannelOptions</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">publishOptions</span>
+						<span class="target">getChannelOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -81,63 +81,26 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_events_.publishoptions.html#exchange" class="tsd-kind-icon">exchange</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_events_.publishoptions.html#payload" class="tsd-kind-icon">payload</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_services_rabbitmq_events_.publishoptions.html#routingkey" class="tsd-kind-icon">routing<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_services_rabbitmq_connection_.getchanneloptions.html#name" class="tsd-kind-icon">name</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="exchange" class="tsd-anchor"></a>
-					<h3>exchange</h3>
-					<div class="tsd-signature tsd-kind-icon">exchange<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/events.ts#L27">services/rabbitmq/events.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/connection.ts#L106">services/rabbitmq/connection.ts:106</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Exchange name</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="payload" class="tsd-anchor"></a>
-					<h3>payload</h3>
-					<div class="tsd-signature tsd-kind-icon">payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unknown</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/events.ts#L31">services/rabbitmq/events.ts:31</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Payload content (recommended to pass a object)</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="routingkey" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> routing<wbr>Key</h3>
-					<div class="tsd-signature tsd-kind-icon">routing<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nsfilho/rabbitmq/blob/4f3c60d/src/services/rabbitmq/events.ts#L29">services/rabbitmq/events.ts:29</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Routing key complement (use prefix before this name)</p>
-						</div>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -159,10 +122,10 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_services_rabbitmq_asserts_.html">&quot;services/rabbitmq/asserts&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_services_rabbitmq_connection_.html">&quot;services/rabbitmq/connection&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_services_rabbitmq_events_.html">&quot;services/rabbitmq/events&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -175,26 +138,47 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_services_rabbitmq_connection_.channelvault.html" class="tsd-kind-icon">Channel<wbr>Vault</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_services_rabbitmq_connection_.channelconsumeoptions.html" class="tsd-kind-icon">channel<wbr>Consume<wbr>Options</a>
+					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_services_rabbitmq_events_.publishoptions.html" class="tsd-kind-icon">publish<wbr>Options</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_services_rabbitmq_connection_.getchanneloptions.html" class="tsd-kind-icon">get<wbr>Channel<wbr>Options</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_services_rabbitmq_events_.publishoptions.html#exchange" class="tsd-kind-icon">exchange</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_services_rabbitmq_events_.publishoptions.html#payload" class="tsd-kind-icon">payload</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_services_rabbitmq_events_.publishoptions.html#routingkey" class="tsd-kind-icon">routing<wbr>Key</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_services_rabbitmq_connection_.getchanneloptions.html#name" class="tsd-kind-icon">name</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_services_rabbitmq_connection_.html#channelvault-1" class="tsd-kind-icon">channel<wbr>Vault</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_services_rabbitmq_events_.html#publish" class="tsd-kind-icon">publish</a>
+						<a href="../modules/_services_rabbitmq_connection_.html#channelconsume" class="tsd-kind-icon">channel<wbr>Consume</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_services_rabbitmq_connection_.html#disconnect" class="tsd-kind-icon">disconnect</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_services_rabbitmq_connection_.html#getchannel" class="tsd-kind-icon">get<wbr>Channel</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_services_rabbitmq_connection_.html#getchannelvault" class="tsd-kind-icon">get<wbr>Channel<wbr>Vault</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_services_rabbitmq_connection_.html#getconnection" class="tsd-kind-icon">get<wbr>Connection</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_services_rabbitmq_connection_.html#waitotherinstanceconnect" class="tsd-kind-icon">wait<wbr>Other<wbr>Instance<wbr>Connect</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_services_rabbitmq_connection_.html#internalstate" class="tsd-kind-icon">internal<wbr>State</a>
 					</li>
 				</ul>
 			</nav>

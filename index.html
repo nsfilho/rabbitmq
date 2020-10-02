@@ -170,23 +170,6 @@ listenProcedureCall&lt;ExamplePayloadRequest, ExamplePayloadReturn&gt;({
 });
 
 <span class="hljs-keyword">const</span> execute = <span class="hljs-keyword">async</span> () =&gt; {
-    <span class="hljs-comment">// --------------------------------------------------------------------------------------------------</span>
-    <span class="hljs-comment">// bind the Exchange to Queue (via code, for test purpose only -- not need in production environment)</span>
-    <span class="hljs-comment">// Generally DevOps will do the properly assignments in production environment.</span>
-    <span class="hljs-keyword">const</span> connection = <span class="hljs-keyword">await</span> getConnection();
-    <span class="hljs-keyword">const</span> channel = <span class="hljs-keyword">await</span> connection.createChannel();
-    <span class="hljs-keyword">await</span> assertExchange({
-        name: <span class="hljs-string">&#x27;exampleRemoteFunction&#x27;</span>,
-        <span class="hljs-keyword">type</span>: <span class="hljs-string">&#x27;fanout&#x27;</span>,
-        advanced: {
-            autoDelete: <span class="hljs-literal">false</span>,
-            durable: <span class="hljs-literal">true</span>,
-        },
-    });
-    <span class="hljs-keyword">await</span> channel.bindQueue(<span class="hljs-string">&#x27;exampleRemoteFunction&#x27;</span>, <span class="hljs-string">&#x27;exampleRemoteFunction&#x27;</span>, <span class="hljs-string">&#x27;default&#x27;</span>);
-    <span class="hljs-keyword">await</span> channel.close();
-    <span class="hljs-comment">// --------------------------------------------------------------------------------------------------</span>
-
     <span class="hljs-comment">// Call a remote procedure (so simple 🥰)</span>
     <span class="hljs-keyword">const</span> remoteReturn = <span class="hljs-keyword">await</span> remoteProcedureCall({
         exchange: <span class="hljs-string">&#x27;exampleRemoteFunction&#x27;</span>,
