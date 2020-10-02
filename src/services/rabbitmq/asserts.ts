@@ -24,11 +24,11 @@
  * VERY IMPORTANT: don't try to import logger here (egg-or-chicken paradox)
  */
 import amqp from 'amqplib';
-import { getConnection } from '.';
+import { getChannel } from '.';
 
 export interface assertExchangeOptions {
     name: string;
-    type: 'fanout' | 'direct' | 'headers';
+    type: 'fanout' | 'direct' | 'headers' | 'topic';
     advanced?: amqp.Options.AssertExchange;
 }
 
@@ -38,10 +38,8 @@ export interface assertExchangeOptions {
  */
 export const assertExchange = async (options: assertExchangeOptions): Promise<amqp.Replies.AssertExchange> => {
     const { name, type, advanced } = options;
-    const connection = await getConnection();
-    const channel = await connection.createChannel();
+    const channel = await getChannel({ name });
     const result = await channel.assertExchange(name, type, advanced);
-    await channel.close();
     return result;
 };
 
@@ -56,9 +54,7 @@ export interface assertQueueOptions {
  */
 export const assertQueue = async (options: assertQueueOptions): Promise<amqp.Replies.AssertQueue> => {
     const { name, advanced } = options;
-    const connection = await getConnection();
-    const channel = await connection.createChannel();
+    const channel = await getChannel({ name });
     const result = await channel.assertQueue(name, advanced);
-    await channel.close();
     return result;
 };

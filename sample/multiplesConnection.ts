@@ -27,7 +27,7 @@
  *
  */
 
-import { getConnection, disconnect } from '../src';
+import { getConnection } from '../src';
 
 const execute = async () => {
     getConnection();

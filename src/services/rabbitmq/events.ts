@@ -19,7 +19,7 @@
  * 
  */
 
-import { getConnection } from '.';
+import { getChannel } from '.';
 import { RABBITMQ_ROUTINGKEY_PREFIX } from '../../constants';
 
 export interface publishOptions {
@@ -37,7 +37,6 @@ export interface publishOptions {
  */
 export const publish = async (options: publishOptions): Promise<void> => {
     const { exchange, routingKey = 'default', payload } = options;
-    const connection = await getConnection();
-    const channel = await connection.createChannel();
+    const channel = await getChannel({ name: exchange });
     channel.publish(exchange, `${RABBITMQ_ROUTINGKEY_PREFIX}.${routingKey}`, Buffer.from(JSON.stringify(payload)));
 };

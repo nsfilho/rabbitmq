@@ -14,9 +14,8 @@ interface ExamplePayloadReturn {
 const execute = async () => {
     setInterval(async () => {
         // Call a remote procedure (so simple 🥰)
-        console.log('Calling...');
         const remoteReturn = await remoteProcedureCall({
-            exchange: 'exampleRemoteFunction',
+            exchange: 'api.rust.test1',
             payload: {
                 name: 'inside function',
                 date: new Date().toISOString(),
@@ -24,7 +23,6 @@ const execute = async () => {
             },
             routingKey: 'default',
         });
-
         // Log return for you see the fully process.
         console.log('Remote Return:', remoteReturn);
     }, 1);

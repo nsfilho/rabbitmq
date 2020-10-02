@@ -19,9 +19,10 @@
  * 
  */
 import { nanoid } from 'nanoid';
-import { getConnection, assertQueue } from '.';
+import { assertQueue, disconnect, getChannel } from '.';
 import { RABBITMQ_ENCONDING_CHARSET } from '../../constants';
-import { disconnect } from './connection';
+import { assertExchange } from './asserts';
+import { channelConsume } from './connection';
 
 export interface remoteProcedureCallOptions {
     /** exchange to send a call */
@@ -31,23 +32,10 @@ export interface remoteProcedureCallOptions {
     /** parameters or payload content */
     payload: unknown;
     /**
-     * Exclusive return channel, creates a new queue, with unique ID, to receive the procedure return.
-     * When you a exclusive channel, have a performance impact because a new queue will be created.
-     * Default: false
-     */
-    exclusiveReturnChannel?: boolean;
-    /**
      * Ignore return (for function which not return anything to you)
      * Default: false
      */
     ignoreReturn?: boolean;
-    /**
-     * Assert return queue exists. Don't use true except in rarely cases, because this cause a large
-     * performance degradation.
-     *
-     * Default: false
-     */
-    assertReturnQueue?: boolean;
 }
 
 /**
@@ -55,44 +43,26 @@ export interface remoteProcedureCallOptions {
  * @param options named parameters
  */
 export const remoteProcedureCall = async <T>(options: remoteProcedureCallOptions): Promise<T | null> => {
-    const { exchange, routingKey, payload, ignoreReturn, exclusiveReturnChannel, assertReturnQueue } = options;
+    const { exchange, routingKey, payload, ignoreReturn } = options;
+    const returnQueueName = `${exchange}.return`;
     const uniqueId = nanoid();
-    const returnQueueName = exclusiveReturnChannel ? `${exchange}.return.${uniqueId}` : `${exchange}.return`;
-    if (assertReturnQueue || exclusiveReturnChannel)
-        await assertQueue({
-            name: returnQueueName,
-            advanced: {
-                autoDelete: true,
-                durable: false,
-            },
-        });
-    const connection = await getConnection();
-    const channel = await connection.createChannel();
-    await channel.publish(exchange, routingKey, Buffer.from(JSON.stringify(payload)), {
-        correlationId: uniqueId,
-        replyTo: returnQueueName,
-    });
-    if (ignoreReturn) return null;
+    const channel = await getChannel({ name: returnQueueName });
     return new Promise((resolve) => {
-        channel.consume(
-            returnQueueName,
-            async (message) => {
-                if (message) {
-                    const { correlationId, replyTo } = message.properties;
-                    if (replyTo === returnQueueName && correlationId === uniqueId) {
-                        channel.ack(message);
-                        resolve(JSON.parse(message.content.toString(RABBITMQ_ENCONDING_CHARSET)) as T);
-                        await channel.close();
-                    } else {
-                        channel.nack(message);
-                    }
-                }
-            },
-            {
-                noAck: false,
-                exclusive: false,
-            },
-        );
+        if (ignoreReturn) {
+            resolve(null);
+        } else {
+            channelConsume({
+                name: returnQueueName,
+                correlationId: uniqueId,
+                callback: (message) => {
+                    resolve(JSON.parse(message.content.toString(RABBITMQ_ENCONDING_CHARSET)) as T);
+                },
+            });
+        }
+        channel.publish(exchange, routingKey, Buffer.from(JSON.stringify(payload)), {
+            correlationId: uniqueId,
+            replyTo: returnQueueName,
+        });
     });
 };
 
@@ -115,6 +85,8 @@ export interface listenProcedureCallOptions<Request, Response> {
     callback: (options: listenCallbackOptions<Request>) => Promise<Response>;
     /** This function return value? default: true */
     returnValue?: boolean;
+    /** Assert Exchange for receive procedures calls. Default: true */
+    autoExchange?: boolean;
 }
 
 /**
@@ -124,9 +96,10 @@ export interface listenProcedureCallOptions<Request, Response> {
 export const listenProcedureCall = async <Request = unknown, Response = unknown>(
     options: listenProcedureCallOptions<Request, Response>,
 ): Promise<void> => {
-    const { callback, queue, returnValue = true } = options;
-    const connection = await getConnection();
-    const channel = await connection.createChannel();
+    const { callback, queue, returnValue = true, autoExchange = true } = options;
+    const channel = await getChannel({ name: queue });
+
+    // Assert Call Queue
     await assertQueue({
         name: queue,
         advanced: {
@@ -134,6 +107,40 @@ export const listenProcedureCall = async <Request = unknown, Response = unknown>
             autoDelete: false,
         },
     });
+
+    // Assert default return queue
+    await assertQueue({
+        name: `${queue}.return`,
+        advanced: {
+            durable: true,
+            autoDelete: false,
+        },
+    });
+
+    if (autoExchange) {
+        // Assert Exchange call queue
+        await assertExchange({
+            name: queue,
+            type: 'topic',
+            advanced: {
+                durable: true,
+                autoDelete: false,
+            },
+        });
+        await channel.bindQueue(queue, queue, '*');
+
+        // Assert Exchange default return queue
+        const returnQueue = `${queue}.return`;
+        await assertExchange({
+            name: returnQueue,
+            type: 'topic',
+            advanced: {
+                durable: true,
+                autoDelete: false,
+            },
+        });
+        await channel.bindQueue(returnQueue, returnQueue, '*');
+    }
 
     /** Logic for stop listening */
     let stopListening = false;
@@ -157,14 +164,13 @@ export const listenProcedureCall = async <Request = unknown, Response = unknown>
                     stop,
                 });
                 if (returnValue) {
-                    channel.sendToQueue(replyTo, Buffer.from(JSON.stringify(result)), {
+                    channel.publish(replyTo, 'return', Buffer.from(JSON.stringify(result)), {
                         correlationId,
                         replyTo,
                     });
                 }
                 channel.ack(message);
                 if (stopListening) {
-                    await channel.close();
                     if (disconnectAfterStop) await disconnect();
                 }
             }

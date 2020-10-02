@@ -107,23 +107,6 @@ listenProcedureCall<ExamplePayloadRequest, ExamplePayloadReturn>({
 });
 
 const execute = async () => {
-    // --------------------------------------------------------------------------------------------------
-    // bind the Exchange to Queue (via code, for test purpose only -- not need in production environment)
-    // Generally DevOps will do the properly assignments in production environment.
-    const connection = await getConnection();
-    const channel = await connection.createChannel();
-    await assertExchange({
-        name: 'exampleRemoteFunction',
-        type: 'fanout',
-        advanced: {
-            autoDelete: false,
-            durable: true,
-        },
-    });
-    await channel.bindQueue('exampleRemoteFunction', 'exampleRemoteFunction', 'default');
-    await channel.close();
-    // --------------------------------------------------------------------------------------------------
-
     // Call a remote procedure (so simple 🥰)
     const remoteReturn = await remoteProcedureCall({
         exchange: 'exampleRemoteFunction',
